@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preventivo Promethea</title>
+  <link rel="stylesheet" href="stilepreventivo.css">
+  <script src="https://cdn.jsdelivr.net/npm/autonumeric@4.6.0"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="./preventivo.js"></script>
+
+</head>
+<body>
+  <div id="preventivo">
+  <div class="container">
+    <!-- Sezione Informazioni Aziendali -->
+    <div class="top-info">
+      <div class="company-info">
+        <div class="company-name">Promethea S.r.l.</div>
+        <div class="company-piva">P.IVA 01417350327</div>
+        <div class="preventivo-number"> PREVENTIVO N°<span id="numeroPreventivo" contenteditable="true"></span> / 2025</div>
+      </div>
+      <div class="company-contact">
+        <img src="LogoFiamma.png" alt="Logo Promethea" class="logo">
+        <div class="contact-details">
+          <div class="phone">Tel: +39 3463107902</div>
+          <div class="email">Mail: <a href="mailto:info@prometheasrl.it">info@prometheasrl.it</a></div>
+        </div>
+      </div>
+    </div>
+    
+   <!-- Dati Cliente -->
+<div class="client-info">
+  <div class="client-left">
+    <div>
+      Data: <input type="date" id="dataPreventivo">
+    </div>
+    <div>
+      Valido fino al: <input type="date" id="validoFino">
+    </div>
+  </div>
+  <div class="client-right">
+    <div class="client-field">
+      <label for="clientName">Nome:</label>
+      <input type="text" id="clientName" value="">
+    </div>
+    <div class="client-field">
+      <label for="clientAddress">Indirizzo:</label>
+      <input type="text" id="clientAddress" value="">
+    </div>
+    <div class="client-field">
+      <label for="clientPiva">P.IVA:</label>
+      <input type="text" id="clientPiva" value="">
+    </div>
+  </div>
+</div>
+
+
+    <!-- Messaggio introduttivo -->
+    <div class="intro-message">
+      <p>Come da Vostra richiesta, inviamo la nostra migliore offerta per i seguenti moduli.<br>
+      I prezzi si intendono IVA esclusa.</p>
+    </div>
+    
+    <!-- Moduli -->
+    <div class="modules">
+
+    <!-- Modulo: Immagine -->
+<div class="modulo">
+  <img src="immagine.png" alt="Icona Immagine" class="module-icon">
+  <div class="module-section">
+    <div class="module-header">
+      <span>IMMAGINE</span>
+    </div>
+    <table class="module-table" id="immagine-table">
+      <thead>
+        <tr data-category="immagine">
+          <th style="width: 40rem;">Servizio</th>
+          <th style="width: 5rem;">Quantità</th>
+          <th style="width: 8rem;">Mensile (€)</th>
+          <th style="width: 8rem;">Una Tantum (€)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="text" class="Servizio" value=""></td>
+          <td><input type="number" class="quantita" value="0" onchange="calcolaTotali()"></td>
+          <td><input type="text" class="prezzoMensile" value="0"></td>
+          <td><input type="text" class="prezzoUnaTantum" value="0"></td>
+        </tr>
+      </tbody>
+    </table>
+    <button class="add-row">+</button>
+  </div>
+</div>
+
+
+      
+  <!-- Modulo: Digitalizzazione -->
+<div class="modulo">
+  <img src="digitalizzazione.png" alt="Icona Digitalizzazione" class="module-icon">
+  <div class="module-section">
+    <div class="module-header">
+      <span>DIGITALIZZAZIONE</span>
+    </div>
+    <table class="module-table" id="digitalizzazione-table">
+      <thead>
+        <tr data-category="digitalizzazione">
+          <th style="width: 40rem;">Servizio</th>
+          <th style="width: 5rem;">Quantità</th>
+          <th style="width: 8rem;">Mensile (€)</th>
+          <th style="width: 8rem;">Una Tantum (€)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="text" class="Servizio" value=""></td>
+          <td><input type="number" class="quantita" value="0" onchange="calcolaTotali()"></td>
+          <td><input type="text" class="prezzoMensile" value="0"></td>
+          <td><input type="text" class="prezzoUnaTantum" value="0"></td>
+        </tr>
+      </tbody>
+    </table>
+    <button class="add-row">+</button>
+  </div>
+</div>
+
+      
+      <!-- Modulo: Contabilità e Fiscalità -->
+<div class="modulo">
+  <img src="contabilita.png" alt="Icona Contabilità" class="module-icon">
+  <div class="module-section">
+    <div class="module-header">
+      <span>CONTABILITÀ</span>
+    </div>
+    <table class="module-table" id="contabilita-table">
+      <thead>
+        <tr data-category="contabilita">
+          <th style="width: 40rem;">Servizio</th>
+          <th style="width: 5rem;">Quantità</th>
+          <th style="width: 8rem;">Mensile (€)</th>
+          <th style="width: 8rem;">Una Tantum (€)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="text" class="Servizio" value=""></td>
+          <td><input type="number" class="quantita" value="0" onchange="calcolaTotali()"></td>
+          <td><input type="text" class="prezzoMensile" value="0"></td>
+          <td><input type="text" class="prezzoUnaTantum" value="0"></td>
+        </tr>
+      </tbody>
+    </table>
+    <button class="add-row">+</button>
+  </div>
+</div>
+
+
+      <!-- Modulo: Management -->
+<div class="modulo">
+  <img src="ottimizzazione.png" alt="Icona Management" class="module-icon">
+  <div class="module-section">
+    <div class="module-header">
+      <span>MANAGEMENT</span>
+    </div>
+    <table class="module-table" id="management-table">
+      <thead>
+        <tr data-category="management">
+          <th style="width: 40rem;">Servizio</th>
+          <th style="width: 5rem;">Quantità</th>
+          <th style="width: 8rem;">Mensile (€)</th>
+          <th style="width: 8rem;">Una Tantum (€)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="text" class="Servizio" value=""></td>
+          <td><input type="number" class="quantita" value="0" onchange="calcolaTotali()"></td>
+          <td><input type="text" class="prezzoMensile" value="0"></td>
+          <td><input type="text" class="prezzoUnaTantum" value="0"></td>
+        </tr>
+      </tbody>
+    </table>
+    <button class="add-row">+</button>
+  </div>
+</div>
+
+    
+    <!-- Totali -->
+    <div class="totals-container">
+      <div class="totals-row">
+        <div class="total-label">TOTALE QUOTA MENSILE:</div>
+        <div class="total-value" id="totaleMensile">0 €</div>
+      </div>
+      <div class="totals-row">
+        <div class="total-label">TOTALE UNA TANTUM:</div>
+        <div class="total-value" id="totaleUnaTantum">0 €</div>
+      </div>
+    </div>
+    
+    
+    <!-- Firma -->
+    <div class="firma">Firma per accettazione</div>
+    
+    <!-- Informazioni Preventivo e Contatti (ripetute per la parte inferiore se necessario) -->
+    <div class="top-info">
+      <div class="company-info">
+        <div class="company-name">Promethea S.r.l.</div>
+        <div class="company-piva">P.IVA 01417350327</div>
+        <div class="preventivo-number">PREVENTIVO N’3 / 2025</div>
+      </div>
+      <div class="company-contact">
+        <img src="LogoFiamma.png" alt="Logo Promethea" class="logo">
+        <div class="contact-details">
+          <div class="phone">Tel: +39 3463107902</div>
+          <div class="email">Mail: <a href="mailto:info@prometheasrl.it">info@prometheasrl.it</a></div>
+        </div>
+      </div>
+    </div>
+ <!-- Dati Cliente -->
+<div class="client-info">
+  <div class="client-left">
+    <p>Data: <span id="dataPreventivoSeconda"></span></p>
+  <p>Valido fino al: <span id="validoFinoSeconda"></span></p>
+  </div>
+  <div class="client-right">
+    <div class="client-field">
+      <label for="clientNameSeconda">Nome:</label>
+      <input type="text" id="clientNameSeconda" readonly>
+    </div>
+    <div class="client-field">
+      <label for="clientAddressSeconda">Indirizzo:</label>
+      <input type="text" id="clientAddressSeconda" readonly>
+    </div>
+    <div class="client-field">
+      <label for="clientPivaSeconda">P.IVA:</label>
+      <input type="numer" id="clientPivaSeconda" readonly>
+    </div>
+  </div>
+</div>
+
+  
+    <!-- Intro e messaggio specifico -->
+    <div class="intro-message">
+      <p>Come da Vostra richiesta, inviamo la nostra migliore offerta per i seguenti moduli.<br>
+      I prezzi si intendono IVA esclusa.</p>
+    </div>
+    <div class="Specifico">
+      <p>IL PREVENTIVO IN OGGETTO RAPPRESENTA IL COSTO TOTALE DI UNA GESTIONE DEL PROFILO SOCIAL AZIENDALE (INSTAGRAM E FACEBOOK)</p>
+    </div>
+  
+<!-- Note e Condizioni -->
+<div class="notes">
+  <div id="notePreventivo" class="note-container"></div>
+</div>
+
+    <div class="conditions">
+      <h3>Condizioni del Servizio</h3>
+      <p><strong>Fatturazione:</strong> IVA di legge esclusa.</p>
+      <p>
+         <strong>Pagamento:</strong> La quota una tantum prevede la possibilità di dilazione del pagamento, con opzioni da 1 a 6 rate
+         mensili. <br>
+         È richiesto un acconto pari al 20% del totale della quota una tantum per l’avvio del progetto. <br>
+         I pagamenti mensili, comprensivi della quota mensile e del rateo eventuale della quota una tantum,
+         devono essere effettuati entro l’ultimo giorno del mese di competenza.
+      </p>
+      <p><strong>Variazioni del Preventivo:</strong> Qualora le prestazioni richieste successivamente al preventivo risultassero più complesse rispetto a
+        quelle preventivate, il presente importo potrà subire variazioni in aumento. Sono escluse dall'importo
+        tutte le prestazioni aggiuntive non esplicitamente descritte.</p>
+    </div>
+  
+  <!-- Totali (seconda pagina) -->
+<div class="totals-container">
+  <div class="totals-row">
+    <div class="total-label">TOTALE QUOTA MENSILE:</div>
+    <div class="total-value" id="totaleQuotaMensileSeconda">0,00 €</div>
+  </div>
+  <div class="totals-row">
+    <div class="total-label">PREZZO UNA TANTUM:</div>
+    <div class="total-value" id="prezzoUnaTantumSeconda">0,00 €</div>
+  </div>
+  <div class="quota-tantum">IL TOTALE UNA TANTUM È DIVISIBILE IN 1 - 3 - 6 MESI</div>
+</div>
+<div class="firma">Firma per accettazione</div>
+</div>
+
+  </div>
+  <button onclick="exportToPDF()">Scarica PDF</button>
+</body>
+</html>
