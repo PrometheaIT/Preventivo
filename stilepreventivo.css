@@ -1,0 +1,728 @@
+/* Stili generali */
+body {
+    font-family: Montserrat, sans-serif;
+    color: #0f0f0f;
+    background-color: #fffaf7;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden !important; /* 🔹 Evita il problema dello scroll laterale */
+  }
+
+  #preventivo-wrapper {
+    padding: 0.2cm; /* 🔹 Ridotto per evitare margini troppo ampi */
+}
+
+  
+  .container {
+    width: 100%;
+    max-width: 1200px; /* Ridotto leggermente per evitare tagli */
+    margin: 0 auto; /* Centra il contenitore */
+    background-color: #fffaf7;
+    padding: 1rem; /* Più spazio per evitare il taglio */
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+}
+
+  
+  
+  /* Top Info */
+  .top-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    font-family: 'Century Gothic';
+    margin: 0rem 1rem 2rem 2rem;
+  }
+  
+  .company-info {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 0rem;
+  }
+  
+  .company-name {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #000;
+  }
+  
+  .company-piva,
+  .preventivo-number {
+    font-size: 1.1rem;
+    margin-top: 0.3125rem;
+  }
+  
+  .company-contact {
+    text-align: right;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+  }
+  
+  .logo {
+    max-width: 4rem;
+    height: auto;
+    margin-bottom: 0.3125rem;
+    margin-top: 1rem;
+  }
+  
+  .contact-details div {
+    font-size: 0.9rem;
+  }
+  
+  /* Client Info */
+  .client-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;  /* I contenuti rimangono allineati in alto */
+    padding-bottom: 0.625rem;
+    margin: 1rem 1rem 1rem 0rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: solid 0.2rem #0f0f0f ;
+    border-top: solid 0.2rem #0f0f0f ;
+  }
+  
+  .client-left,
+  .client-right {
+    font-size: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+  }
+  
+  .client-left {
+    flex: 2;  /* mantiene le info di sinistra in una colonna */
+    margin-left: 2rem;
+  }
+  
+  .client-right {
+    flex: 1.5;  /* rende la colonna di destra più ampia */
+  }
+  
+  .client-field {
+    display: flex;
+    align-items: flex-start; /* Cambia da center a flex-start */
+    margin-bottom: 0.3rem;
+  }
+  
+  .client-field label {
+    min-width: 4.7rem; /* Larghezza fissa per le etichette */
+    margin-right: 1rem;
+    text-align: left;
+    font-weight: bold;
+  }
+  
+  .client-field input {
+    flex: 1;
+    width: 100%; /* Occupa tutta la larghezza disponibile */
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Per assicurarsi che padding e bordo siano inclusi nella larghezza */
+  }
+  
+  
+
+  .input-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.input-container label {
+    flex: 1;
+    min-width: 150px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.input-container input {
+    flex: 2;
+    min-width: 200px;
+    max-width: 300px;
+    padding: 5px;
+    font-size: 16px;
+    text-overflow: ellipsis; /* Mostra i puntini se il testo è troppo lungo */
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.input-container input:focus {
+    width: 100%; /* Selezionando l'input, si espande per visualizzare tutto */
+}
+
+
+  
+  /* Intro Message */
+  .intro-message {
+    font-size: 1.1rem;
+    margin-bottom: 1.25rem;
+    margin-left: 2rem;
+
+  }
+  
+  /* Modulo (wrapper per icona e contenuto) */
+  .modulo {
+    display: flex;
+    align-items: flex-start;
+    margin: 1.25rem 0.125rem;
+  }
+  
+  /* Icona del modulo */
+  .module-icon {
+    width: 3rem;
+    height: 2.5rem;
+    margin-right: 0.3125rem; /* 5px ~ 0.3125rem */
+    flex-shrink: 0;
+  }
+  
+  /* Blocco del modulo (titolo e tabella) */
+  .module-section {
+    padding-left: 0.3125rem; /* 5px */
+    width: 100%;
+    position: relative;
+    padding-right: 2rem; /* 🔹 Ridotto da 4rem a 2rem per diminuire il margine destro */
+    overflow-x: auto;
+}
+
+  
+  /* Header del modulo (titolo) con sfondo blu */
+  .module-header {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(10deg, #832c98,#9f1893,#a50063);
+    color: #fffaf7;
+    padding: 0.625rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 0.4rem 0.4rem 0 0;
+    margin-bottom: 0;
+    border-left: 1px solid #0f0f0f;
+    border-right: 1px solid #0f0f0f;
+    border-top: 1px solid #0f0f0f;
+  }
+  
+  /* Tabella del modulo */
+  .module-table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+    margin-top: 0;
+    margin-bottom: 0.625rem;
+    table-layout: fixed; /* Evita che le colonne si ridimensionino in modo errato */
+    border-collapse: collapse; /* Mantiene la tabella compatta */
+  }
+  
+  .module-table th,
+  .module-table td {
+    border: 1px solid #0f0f0f;
+    padding: 0.5rem;
+    text-align: left;
+    font-size: 0.95rem;
+    white-space: normal; /* Permette di andare a capo se necessario */
+    word-wrap: break-word; /* Evita il testo troppo lungo */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Opzionale: mostra "..." per i testi lunghi */
+    border-color: #0f0f0f;
+  }
+  
+  .module-table th {
+    background-color: #842c98;
+    color: #fffaf7;
+    font-weight: bold;
+    
+  }
+  
+  .module-table tbody tr:nth-child(even) {
+    background-color: #fffaf7;   
+  }
+  
+ /* Stile generale per tutti gli input nelle celle */
+.module-table input {
+  width: 100%; /* L'input riempie tutta la cella */
+  box-sizing: border-box; /* Evita che il padding alteri la dimensione */
+  border: none; /* Rende il campo più pulito */
+  background-color: transparent; /* Mantiene lo stile della tabella */
+  text-align: center; /* Centra tutti gli input di default */
+}
+
+/* Allinea a sinistra SOLO la colonna "Servizio" */
+.module-table td:first-child input {
+  text-align: left;
+}
+
+.module-table thead tr th:nth-child(1) { width: 50% !important; }
+.module-table thead tr th:nth-child(2) { width: 15% !important; }
+.module-table thead tr th:nth-child(3) { width: 17.5% !important; }
+.module-table thead tr th:nth-child(4) { width: 17.5% !important; }
+
+
+  /* Totali */
+  .totals {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0.625rem;
+    background-color: fffaf7af7;
+    border-top: 0.188rem solid #842c98;
+    margin-bottom: 1.25rem;
+  }
+  
+  .totals div {
+    width: 48%;
+  }
+  
+  .totals-container {
+    margin: 4rem 2rem 4rem 2rem;
+  }
+  
+  .totals-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0.625rem;
+    border: 0.188rem solid #842c98;
+  }
+  
+  .total-label {
+    text-align: left;
+    width: 50%;
+    
+  }
+  
+  .total-value {
+    text-align: right;
+    width: 50%;
+  }
+  
+  /* Firma */
+  .firma {
+    border-top: 0.1rem solid #0f0f0f;
+    margin-top: 10rem;
+    margin-right: 4rem;
+    margin-bottom: 10rem;
+    margin-left: auto; /* Spinge la firma a destra */
+    text-align: center; /* Allinea il testo a destra all'interno della div */
+    padding-top: 2.5rem;
+    width: 20rem ;
+  }
+  
+  /* Quota una tantum */
+  .quota-tantum {
+    margin-top: 3rem;
+    font-weight: 600;
+    color: #0f0f0f;
+  }
+  
+  /* Note e Condizioni */
+  .notes,
+  .conditions {
+    margin: 2rem 2rem 2rem 2rem;
+    padding: 1rem;
+    background: linear-gradient(540deg, #e3a1d1, #fffaf7, #fffaf7, #fffaf7,#e3a1d1);
+    border-left: 0.3125rem solid #a50063;
+    font-size: 0.95rem;
+  }
+  
+  .notes h3,
+  .conditions h3 {
+    margin-top: 0;
+    color: #832c98;
+  }
+  
+  .Specifico {
+    color: #0f0f0f;
+    font-weight: 700;
+    display: block;
+    padding-left: 2rem;
+    padding-right: 1rem;
+    white-space: normal;
+    word-wrap: break-word;
+  }
+  
+    
+    .client-name {
+      margin-right: 0;
+    }  
+
+  .modules {
+    overflow-x: auto;
+  }
+  
+  
+
+  
+  input {
+    border: none; /* rimuove il bordo completo */
+    border-bottom: 1px solid #ccc; /* lascia una linea sottile in basso */
+    background: transparent; /* sfondo trasparente per integrarsi meglio */
+    padding: 4px; /* un po' di spazio interno per migliorare la leggibilità */
+    font-size: 1em; /* assicura che il testo sia leggibile */
+  }
+  
+  input:focus {
+    outline: none; /* rimuove il bordo di focus del browser */
+    border-bottom: 1px solid #999; /* puoi cambiare il colore al focus */
+  }
+  
+
+  .add-row {
+    background-color: #0f0f0f;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 0.4rem;
+}
+
+.add-row:hover {
+    background-color: #9f1893;
+}
+
+
+.row-container {
+  display: flex;
+  align-items: center;
+}
+
+.delete-row {
+  margin-left: 5px; /* 🔹 Ridotto il margine dalla tabella */
+  background-color: #a50063;
+  color: white;
+  border: none;
+  padding: 3px 6px; /* 🔹 Ridotto il padding per un bottone più compatto */
+  font-size: 12px; /* 🔹 Ridotta la dimensione del testo */
+  cursor: pointer;
+  border-radius: 3px; /* 🔹 Angoli leggermente meno arrotondati */
+}
+
+.delete-row:hover {
+  background-color: #ef0095;
+}
+
+
+#exportPDF {
+  display: block;
+  margin: 0 auto; /* Centra il bottone */
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  background-color: #9f1893; /* Aggiungi colore di sfondo */
+  color: white; /* Testo bianco */
+  border: none; /* Rimuove bordo */
+  cursor: pointer; /* Cambia il cursore al passaggio */
+  transition: background 0.3s ease-in-out;
+}
+
+#exportPDF:hover {
+  background-color: #a50063; /* Colore al passaggio */
+}
+
+
+/* Nascondi elementi solo durante l'esportazione PDF */
+body.pdf-export .add-row,
+body.pdf-export .delete-row,
+body.pdf-export #exportPDF {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  width: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  position: absolute !important;
+  left: -9999px !important;
+}
+
+/* =============== RESPONSIVE MOBILE (max-width: 768px) =============== */
+@media screen and (max-width: 768px) {
+  .container {
+    width: 95%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: #fffaf7;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+  }
+
+  /* Top Info */
+  .top-info {
+    margin: 0 0.5rem !important;
+    padding-bottom: 0.4rem;
+  }
+
+  .company-info {
+    font-size: clamp(0.7rem, 2vw, 1rem) !important;
+  }
+
+  .company-name {
+    font-size: clamp(1rem, 2vw, 2rem) !important;
+  }
+
+  .company-piva,
+  .preventivo-number {
+    font-size: clamp(0.7rem, 2vw, 1rem) !important;
+  }
+
+  .contact-details,
+  .contact-details div {
+    font-size: clamp(0.5rem, 2vw, 1rem) !important;
+  }
+
+  .logo {
+    max-width: clamp(2rem, 8vw, 4rem) !important;
+  }
+
+  /* Client Info */
+  .client-info {
+    flex-wrap: wrap;
+    margin-top: 0 !important;
+    padding: 1rem 0 !important;
+  }
+
+  .client-left {
+    margin-left: 1rem;
+    width: 100%;
+  }
+
+  .client-left div {
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+
+  .client-left input {
+    max-width: 180px !important;
+    padding: 0.3rem !important;
+  }
+
+  .client-left label {
+    margin-bottom: 0.3rem;
+  }
+
+  .client-right {
+    width: 100%;
+    margin: 0 1rem 0 0 !important;
+    padding-right: 0.5rem !important;
+  }
+
+  .client-field {
+    flex-direction: column;
+    font-size: clamp(0.7rem, 2.5vw, 1rem) !important;
+  }
+
+  .client-field label {
+    font-size: clamp(0.6rem, 2.5vw, 1rem) !important;
+  }
+
+  .client-field input {
+    max-width: 220px;
+    font-size: clamp(0.7rem, 2.5vw, 1rem) !important;
+  }
+
+  /* Moduli */
+  .module-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0 0.1rem;
+  }
+
+  .module-section {
+    width: 100% !important;
+    padding-right: 0;
+  }
+
+  .module-header {
+    font-size: clamp(0.8rem, 2.5vw, 1rem) !important;
+  }
+
+  .module-table {
+    width: 100% !important;
+    table-layout: fixed !important;
+  }
+
+  .module-table th,
+  .module-table td {
+    font-size: clamp(0.5rem, 2vw, 0.9rem) !important;
+    padding: 0.3rem !important;
+  }
+
+  /* Sezioni testuali */
+  .notes,
+  .conditions,
+  .Specifico {
+    font-size: clamp(0.7rem, 2vw, 0.9rem) !important;
+    margin: 0 0 1rem !important;
+    padding: 0.5rem !important;
+  }
+
+  .intro-message {
+    margin: 0 0.5rem 0 0 !important;
+    font-size: clamp(0.8rem, 2.5vw, 1rem) !important;
+  }
+
+  /* Bottoni */
+  .add-row {
+    margin-top: 0.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .delete-row {
+    position: absolute !important;
+    right: -0.2rem !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    padding: 2px 3px !important;
+    font-size: 0.7rem !important;
+  }
+
+  /* Totali e Firma */
+  .totals-container {
+    padding: 10px;
+    margin: 0 !important;
+  }
+
+  .totals-row {
+    font-size: 0.75rem !important;
+    margin-left: 1.5rem;
+  }
+
+  .total-label { font-size: 0.6rem !important; }
+  .total-value { font-size: 0.75rem !important; }
+  .quota-tantum { font-size: 0.75rem !important; }
+
+  .firma {
+    font-size: clamp(0.8rem, 2.5vw, 1rem) !important;
+    margin: 4rem 2rem 10rem auto !important;
+    width: 13rem !important;
+    padding-top: 0.5rem !important;
+  }
+
+  #exportPDF {
+    width: 10rem;
+    height: 2.5rem;
+    font-size: 1rem;
+  }
+}
+
+/* =============== STAMPA =============== */
+
+@media print {
+  /* Impostazioni generali per la stampa */
+  @page {
+    size: A4;
+    margin: 0;
+    padding: 10rem;
+
+  }
+
+
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    width: 100% !important;
+    overflow: visible !important;
+    zoom: 0.92;
+  }
+
+
+  
+  /* Rivedi le sezioni critiche */
+  .company-contact,
+  .client-right,
+  .totals-container,
+  .notes,
+  .conditions {
+    width: 100% !important; /* Lascia che usino tutta la larghezza disponibile */
+    margin: 0 auto !important; /* Centra l'elemento, se necessario */
+    padding: 0.5cm; /* Usa un padding in cm se serve, oppure rimuovilo se non necessario */
+    box-sizing: border-box;
+    page-break-inside: avoid;
+    /* Rimuovi l'offset laterale */
+    position: static !important;
+    right: auto !important;
+  }
+
+  
+
+  /* Contenitore principale */
+  .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 1.2cm !important;
+    box-shadow: none !important;
+  }
+
+  /* Tabelle */
+  .module-table {
+    width: 100% !important;
+    table-layout: auto;
+    page-break-inside: avoid !important;
+    break-inside: avoid-page !important;
+    break-inside: avoid !important;
+  }
+
+  .module-table tr {
+    page-break-inside: avoid !important;
+    break-inside: avoid-page !important;
+    display: table-row !important;
+
+  }
+
+    /* Mantieni le celle della tabella intere */
+    .module-table td, 
+    .module-table th {
+      page-break-inside: avoid !important;
+      break-inside: avoid-page !important;
+    }
+
+
+  .module-section {
+    break-inside: avoid-page !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* Elementi a tendenza wide */
+  .client-info,
+  .top-info {
+    max-width: 93% !important;
+    margin-right: 2cm !important;
+  }
+
+  /* Forza interruzioni controllate */
+  .new-page {
+    page-break-before: always;
+    margin-top: 1.5cm;
+  }
+
+  /* Margini speciali per la firma */
+  .firma {
+    margin-right: 4cm !important;
+    padding-right: 1cm !important;
+  }
+
+  .modulo,
+.module-table,
+.totals-container,
+.notes,
+.conditions {
+  page-break-inside: avoid; /* Compatibilità vecchi browser */
+  break-inside: avoid; /* Standard moderno */
+}
+
+.modulo {
+  break-inside: avoid-page !important;
+  page-break-inside: avoid !important;
+  display: inline-block !important;
+  width: 100% !important;
+}
+}
